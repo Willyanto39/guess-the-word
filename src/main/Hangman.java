@@ -25,13 +25,13 @@ public class Hangman {
 			do {
 				char letter = inputLetter();
 				showLetterIfMatch(letter);
-			}while(!playerHasRunOutOfLives() && !wordIsCompleted());
+			}while(!player.hasRunOutOfLives() && !wordIsCompleted());
 		
 			if(wordIsCompleted()) {
 				player.addScore(currentWord.length());
 			}
 			
-			if(playerHasRunOutOfLives()) {
+			if(player.hasRunOutOfLives()) {
 				displayGameOverMessage();
 				break;
 			}
@@ -49,10 +49,6 @@ public class Hangman {
 		return hiddenWord.equals(currentWord);
 	}
 
-	private boolean playerHasRunOutOfLives() {
-		return player.getLife() == 0;
-	}
-	
 	private void inputPlayerName() {
 		String name;
 		

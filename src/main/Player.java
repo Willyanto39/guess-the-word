@@ -31,4 +31,8 @@ public class Player {
 	public void addScore(int score) {
 		this.score += score;
 	}
+	
+	public boolean hasRunOutOfLives() {
+		return life == 0;
+	}
 }
