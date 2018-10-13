@@ -3,7 +3,7 @@ package main;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Hangman {
+public class GuessTheWord {
 	private  String[] words = { "admin","word",
 			"shark", "lion", "amazing", "delicious",
 			"world", "fantastic", "morose", "empty",
