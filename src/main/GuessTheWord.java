@@ -4,11 +4,12 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GuessTheWord {
-	private  String[] words = { "admin","word",
-			"shark", "lion", "amazing", "delicious",
-			"world", "fantastic", "morose", "empty",
-			"shell", "computer", "mastermind", "composer",
-			"package", "user", "programmer", "software"
+	private  String[] words = {
+			"admin", "word", "shark", "lion", 
+			"amazing", "delicious", "world", "fantastic", 
+			"morose", "empty","shell", "computer", 
+			"mastermind", "composer","package", "user", 
+			"programmer", "software"
 	};
 
 	private  Scanner scan = new Scanner(System.in);
@@ -24,10 +25,12 @@ public class GuessTheWord {
 			
 			do {
 				char letter = inputLetter();
+				scan.nextLine();
 				showLetterIfMatch(letter);
 			}while(!player.hasRunOutOfLives() && !wordIsCompleted());
 		
 			if(wordIsCompleted()) {
+				displayCongratulationMessage();
 				player.addScore(currentWord.length());
 			}
 			
@@ -36,6 +39,11 @@ public class GuessTheWord {
 				break;
 			}
 		}
+	}
+
+	private void displayCongratulationMessage() {
+		System.out.println("Congratulations, you found the hidden word");
+		scan.hasNextLine();
 	}
 
 	private void displayGameOverMessage() {
